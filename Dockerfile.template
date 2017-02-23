@@ -1,0 +1,26 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-python
+
+#switch on systemd init system in container
+ENV INITSYSTEM on
+
+# pip install python deps from requirements.txt
+# For caching until requirements.txt changes
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+RUN pip install RPi.Gpio
+
+RUN cd Adafruit_Python_DHT/
+
+#RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+
+RUN apt-get update && apt-get install -yq build-essential python-dev python-openssl
+
+RUN python Adafruit_Python_DHT/ez_setup.py install
+
+RUN cd ..
+
+CMD ["sudo python", "myfirstIOT.py"]
