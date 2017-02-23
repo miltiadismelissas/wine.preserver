@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM resin/%%RESIN_MACHINE_NAME%%-python3
 
 #switch on systemd init system in container
 ENV INITSYSTEM on
@@ -21,4 +21,4 @@ RUN python Adafruit_Python_DHT/ez_setup.py install
 
 RUN cd ..
 
-CMD ["sudo python", "myfirstIOT.py"]
+CMD ["python", "myfirstIOT.py"]
