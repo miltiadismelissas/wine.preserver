@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python:3
+FROM resin/%%RESIN_MACHINE_NAME%%-python:latest
 
 #switch on systemd init system in container
 ENV INITSYSTEM on
