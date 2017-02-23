@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%:jessie
+FROM resin/rpi-raspbian:wheezy-2015-01-15
 
 WORKDIR /usr/src/app
 ENV INITSYSTEM on
