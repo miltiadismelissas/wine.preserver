@@ -50,16 +50,16 @@ def main():
     
     print ('starting...')
 
-    baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
-    print (baseURL)
+    #baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
+    #print (baseURL)
     
     while True:
         try:
             RHW, TW, TWF = getSensorData()
             LT = RCtime(RCpin)
-            f = urllib.request.urlopen(baseURL + 
-                                "&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
-                                "&field4=%s" % (LT))
+            #f = urllib.request.urlopen(baseURL + 
+                                #"&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
+                                #"&field4=%s" % (LT))
             print (f.read())
             print (TW + " " + TWF+ " " + RHW + " " + LT)
             f.close()
