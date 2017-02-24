@@ -48,7 +48,7 @@ def RCtime(RCpin):
 # main() function
 def main():
     
-    print 'starting...'
+    print ('starting...')
 
     baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
     print baseURL
