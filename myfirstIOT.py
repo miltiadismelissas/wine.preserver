@@ -51,7 +51,7 @@ def main():
     print ('starting...')
 
     baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
-    print baseURL
+    print (baseURL)
     
     while True:
         try:
@@ -67,7 +67,7 @@ def main():
 
             sleep(int(myDelay))
         except:
-            print 'exiting.'
+            print ('exiting.')
             break
 
 # call main
