@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 import os
 from time import sleep
 import Adafruit_DHT
-import urllib2
+#import urllib2
 
 DEBUG = 1
 # Setup the pins we are connect to
@@ -15,7 +15,7 @@ RCpin = 24
 DHTpin = 23
 
 #Setup our API and delay
-myAPI = "GUULD3SGEZIJIXXB"
+#myAPI = "GUULD3SGEZIJIXXB"
 myDelay = 30 #how many seconds between posting data
 
 GPIO.setmode(GPIO.BCM)
@@ -42,19 +42,19 @@ def main():
     
     print 'starting...'
 
-    baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
-    print baseURL
+    #baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
+    #print baseURL
     
     while True:
         try:
             RHW, TW, TWF = getSensorData()
             LT = RCtime(RCpin)
-            f = urllib2.urlopen(baseURL + 
-                                "&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
-                                "&field4=%s" % (LT))
-            print f.read()
+            #f = urllib2.urlopen(baseURL + 
+                                #"&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
+                                #"&field4=%s" % (LT))
+            #print f.read()
             print TW + " " + TWF+ " " + RHW + " " + LT
-            f.close()
+            #f.close()
             
 
             sleep(int(myDelay))
