@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python:3
+FROM resin/%%RESIN_MACHINE_NAME%%-python
 
 WORKDIR /usr/src/app
 
@@ -13,4 +13,4 @@ COPY . /usr/src/app
 
 RUN git clone https://github.com/adafruit/Adafruit_Python_DHT.git && cd Adafruit_Python_DHT && python3 setup.py install && cd ..
 
-CMD ["python3", "myfirstIOT.py"]
+CMD ["python", "myfirstIOT.py"]
