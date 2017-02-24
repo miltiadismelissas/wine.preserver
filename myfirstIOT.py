@@ -15,7 +15,7 @@ import RPi.GPIO as GPIO
 import os
 from time import sleep
 import Adafruit_DHT
-import urllib2
+import urllib.request
 
 DEBUG = 1
 # Setup the pins we are connect to
@@ -57,7 +57,7 @@ def main():
         try:
             RHW, TW, TWF = getSensorData()
             LT = RCtime(RCpin)
-            f = urllib2.urlopen(baseURL + 
+            f = urllib.request.urlopen(baseURL + 
                                 "&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
                                 "&field4=%s" % (LT))
             print (f.read())
