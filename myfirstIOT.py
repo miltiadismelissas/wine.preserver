@@ -66,9 +66,9 @@ def main():
             
 
             sleep(int(myDelay))
-        except:
-            print ('exiting.')
-            break
+        #except:
+            #print ('exiting.')
+            #break
 
 # call main
 if __name__ == '__main__':
