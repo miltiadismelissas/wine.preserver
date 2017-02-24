@@ -1,13 +1,5 @@
 """
-My First Internet of Things
-
-Temperature/Humidity Light monitor using Raspberry Pi, DHT11, and photosensor 
-Data is displayed at thingspeak.com
-2015/06/15
-SolderingSunday.com
-
-Based on project by Mahesh Venkitachalam at electronut.in
-
+Wine Preserver
 """
 # Import all the libraries we need to run
 import sys
@@ -24,7 +16,7 @@ DHTpin = 23
 
 #Setup our API and delay
 myAPI = "GUULD3SGEZIJIXXB"
-myDelay = 15 #how many seconds between posting data
+myDelay = 30 #how many seconds between posting data
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(RCpin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
@@ -50,25 +42,25 @@ def main():
     
     print ('starting...')
 
-    #baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
-    #print (baseURL)
+    baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
+    print (baseURL)
     
     while True:
         try:
             RHW, TW, TWF = getSensorData()
             LT = RCtime(RCpin)
-            #f = urllib.request.urlopen(baseURL + 
-                                #"&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
-                                #"&field4=%s" % (LT))
+            f = urllib.request.urlopen(baseURL + 
+                                "&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
+                                "&field4=%s" % (LT))
             print (f.read())
             print (TW + " " + TWF+ " " + RHW + " " + LT)
             f.close()
             
 
             sleep(int(myDelay))
-        #except:
-            #print ('exiting.')
-            #break
+        except:
+            print ('exiting.')
+            break
 
 # call main
 if __name__ == '__main__':
