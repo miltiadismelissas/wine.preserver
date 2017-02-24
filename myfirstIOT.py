@@ -60,8 +60,8 @@ def main():
             f = urllib2.urlopen(baseURL + 
                                 "&field1=%s&field2=%s&field3=%s" % (TW, TWF, RHW)+
                                 "&field4=%s" % (LT))
-            print f.read()
-            print TW + " " + TWF+ " " + RHW + " " + LT
+            print (f.read())
+            print (TW + " " + TWF+ " " + RHW + " " + LT)
             f.close()
             
 
