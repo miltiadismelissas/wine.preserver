@@ -1,4 +1,7 @@
-#!/usr/bin/python
+"""
+resin.io platform
+
+"""
 
 import RPi.GPIO as GPIO
 import time
