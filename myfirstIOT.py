@@ -38,12 +38,15 @@ def RCtime(RCpin):
     return (str(LT))
     
 # main() function
+
+sleep(15)
+
 def main():
     
     print ('starting...')
 
-    #baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
-    #print (baseURL)
+    baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
+    print (baseURL)
     
     while True:
         try:
@@ -54,9 +57,8 @@ def main():
                                 #"&field4=%s" % (LT))
             #print (f.read())
             print (TW + " " + TWF+ " " + RHW + " " + LT)
-            #f.close()
+            f.close()
             
-
             sleep(int(myDelay))
         except:
             print ('exiting.')
