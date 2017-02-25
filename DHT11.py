@@ -179,7 +179,7 @@ while True:
 	   global Humidity
 	   global Temperature
 	   
-	   print "H: "+Humidity, "T: "+Temperature
+	   print ("H: "+Humidity, "T: "+Temperature)
 	#}}}
 	
 	
@@ -191,7 +191,7 @@ while True:
 	    analyzeData();
 	    if (isDataValid()):
 	        crc_OK=True;
-	        print "\r",
+	        print ("\r"),
 	        printData();
 	    else:
 	        sys.stderr.write(".")
