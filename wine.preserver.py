@@ -29,9 +29,9 @@ while True:
 	LEDpin= 4
 	
 	
-	GPIO.output(LEDpin,GPIO.LOW)
+	GPIO.output(LEDpin,GPIO.HIGH)
 	time.sleep(1)
-	GPIO.output(led,GPIO.HIGH)
+	GPIO.output(led,GPIO.LOW)
 	
 	
 	GPIO.setmode(GPIO.BCM)
