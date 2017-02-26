@@ -32,6 +32,8 @@ while True:
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(RCpin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 	
+	GPIO.setup(LEDpin,GPIO.OUT)
+	
 	GPIO.output(LEDpin,GPIO.HIGH)
 	time.sleep(1)
 	GPIO.output(LEDpin,GPIO.LOW)
