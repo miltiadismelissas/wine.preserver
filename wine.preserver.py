@@ -32,11 +32,11 @@ while True:
 	GPIO.setup(RCpin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 	
 	def RCtime(RCpin):
-    LT = 0
+		LT = 0
     
-    if (GPIO.input(RCpin) == True):
+		if (GPIO.input(RCpin) == True):
         LT += 1
-    return (str(LT))
+		return (str(LT))
 
 
 	def pullData():
