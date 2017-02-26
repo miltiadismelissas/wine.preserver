@@ -29,13 +29,13 @@ while True:
 	LEDpin= 4
 	
 	
-	GPIO.output(LEDpin,GPIO.HIGH)
-	time.sleep(1)
-	GPIO.output(led,GPIO.LOW)
-	
-	
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(RCpin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+	
+	GPIO.output(LEDpin,GPIO.HIGH)
+	time.sleep(1)
+	GPIO.output(LEDpin,GPIO.LOW)
+	
 	
 	def RCtime(RCpin):
 		LT = 0
