@@ -190,7 +190,7 @@ while True:
 	   
 	   LT = RCtime(RCpin)
 	   
-	   print ("H: "+Humidity, "T: "+Temperature, "L: "+Lighting)
+	   print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 	#}}}
 	
 	
