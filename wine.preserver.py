@@ -35,7 +35,7 @@ while True:
 		LT = 0
     
 		if (GPIO.input(RCpin) == True):
-        LT += 1
+			LT += 1
 		return (str(LT))
 
 
