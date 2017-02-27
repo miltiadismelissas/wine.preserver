@@ -236,7 +236,7 @@ while True:
 	    if (isDataValid()):
 	        crc_OK=True;
 	        print ("\r"),
-	        printData();
+	        checkandprintData();
 	    else:
 	        sys.stderr.write(".")
 	        time.sleep(2);
