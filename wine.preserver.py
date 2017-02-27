@@ -48,7 +48,7 @@ while True:
 	
 	
 	def RCtime(RCpin):
-	    global LT
+		global LT
 		
 		LT = 0
     
