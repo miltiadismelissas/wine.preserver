@@ -47,19 +47,6 @@ while True:
 	GPIO.output(LEDpin,GPIO.LOW)
 	
 	
-	def RCtime(RCpin):
-		global LT
-		
-		LT = 0
-    
-		if (GPIO.input(RCpin) == True):
-			LT += 1
-			if (LT == 1) :
-				print ('Alert! Light in the wine cellar')
-				#sent_SMS()
-		return (str(LT))
-		
-		
 	def sent_SMS():
 		from twilio.rest import TwilioRestClient
 
@@ -72,8 +59,22 @@ while True:
 		from_="+12052364839")   # Replace with your Twilio number
 		
 		print(message.sid)
-
-
+	
+	
+	def RCtime(RCpin):
+		global LT
+		
+		LT = 0
+    
+		if (GPIO.input(RCpin) == True):
+			LT += 1
+			if (LT == 1) :
+				print ('Alert! Light in the wine cellar')
+				sent_SMS()
+		return (str(LT))
+		
+		
+	
 	def pullData():
 	#{{{ Pull data from GPIO
 	    global data
