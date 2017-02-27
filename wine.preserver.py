@@ -221,8 +221,7 @@ while True:
 	   
 	   print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 	   
-	   #if ((TW < 20) or (RHW > 60)):
-		if (LT == 0) :
+	if (LT == 0) :
 			print ('Alert! Light in the wine cellar')
 			sent_SMS()
        
