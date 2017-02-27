@@ -54,6 +54,9 @@ while True:
     
 		if (GPIO.input(RCpin) == True):
 			LT += 1
+			if (LT == 1) :
+			print ('Alert! Light in the wine cellar')
+			#sent_SMS()
 		return (str(LT))
 		
 		
@@ -222,10 +225,7 @@ while True:
 		global LT
 		
 		LT = RCtime(RCpin)
-		if (LT == 1) :
-			print ('Alert! Light in the wine cellar')
-			#sent_SMS()
-		
+				
 		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 		
        
