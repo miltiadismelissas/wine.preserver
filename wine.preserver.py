@@ -224,7 +224,7 @@ while True:
 	   #if ((TW < 20) or (RHW > 60)):
 	    if (LT == 0) :
 			print ('Alert! Light in the wine cellar')
-		    Sent_SMS()
+			Sent_SMS()
        
     # return dict
 	#}}}
