@@ -37,6 +37,7 @@ while True:
 	
 	
 	GPIO.setmode(GPIO.BCM)
+	GPIO.setwarnings(False)
 	GPIO.setup(RCpin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 	
 	GPIO.setup(LEDpin,GPIO.OUT)
