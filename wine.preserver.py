@@ -227,8 +227,11 @@ while True:
 		
 		LT = RCtime(RCpin)
 		
-		if (int(Temperature) < 10) or (int(Temperature) > 14) or (int(Humidity) < 50):
-			print ("Alert! Humidity/Temperature out of range")
+		if (int(Temperature) < 10) or (int(Temperature) > 14):
+			print ("Alert! Temperature out of range")
+		if (int(Humidity) < 50):
+			print ("Alert! Humidity less than 50%")
+		
 		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 		
        
