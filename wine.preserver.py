@@ -1,5 +1,12 @@
 """
-resin.io platform
+
+Basic code from netikras/r-pi_DHT11
+git clone https://github.com/netikras/r-pi_DHT11
+Code heavily modified for the purpose of this project
+
+Melissas Miltiadis
+mm260865@gmail.com
+Corfu 27/2/2017
 
 """
 
@@ -45,6 +52,20 @@ while True:
 		if (GPIO.input(RCpin) == True):
 			LT += 1
 		return (str(LT))
+		
+		
+	def Sent_SMS():
+		from twilio.rest import TwilioRestClient
+
+		account_sid = "AC0051c428cee05eb321df793c26164329" # Your Account SID from www.twilio.com/console
+		auth_token  = "87b7557737d6c77fb9ca9619c707da20"  # Your Auth Token from www.twilio.com/console
+
+		client = TwilioRestClient(account_sid, auth_token)
+		message = client.messages.create(body="Alert!",
+		to="+306972438526",    # Replace with your phone number
+		from_="+12052364839")   # Replace with your Twilio number
+		
+		print(message.sid)
 
 
 	def pullData():
@@ -192,13 +213,20 @@ while True:
 	
 	
 	#{{{ Print data
-	def printData():
+	def checkandprintData():
 	   global Humidity
 	   global Temperature
 	   
 	   LT = RCtime(RCpin)
 	   
 	   print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
+	   
+	   #if ((TW < 20) or (RHW > 60)):
+	   if LT = 0
+			print ('Alert! Light in the wine cellar')
+			Sent_SMS()
+       
+    # return dict
 	#}}}
 	
 	
