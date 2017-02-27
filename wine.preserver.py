@@ -54,7 +54,7 @@ while True:
 		return (str(LT))
 		
 		
-	def Sent_SMS():
+	def sent_SMS():
 		from twilio.rest import TwilioRestClient
 
 		account_sid = "AC0051c428cee05eb321df793c26164329" # Your Account SID from www.twilio.com/console
@@ -222,9 +222,9 @@ while True:
 	   print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 	   
 	   #if ((TW < 20) or (RHW > 60)):
-	    if (LT == 0) :
+		if (LT == 0) :
 			print ('Alert! Light in the wine cellar')
-			Sent_SMS()
+			sent_SMS()
        
     # return dict
 	#}}}
