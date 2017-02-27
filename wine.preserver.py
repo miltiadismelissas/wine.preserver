@@ -214,12 +214,12 @@ while True:
 	
 	#{{{ Print data
 	def checkandprintData():
-	   global Humidity
-	   global Temperature
+		global Humidity
+	    global Temperature
 	   
-	   LT = RCtime(RCpin)
+	    LT = RCtime(RCpin)
 	   
-	   print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
+	    print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 	   
 		if (LT == 0) :
 			print ('Alert! Light in the wine cellar')
