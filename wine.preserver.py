@@ -218,11 +218,12 @@ while True:
 		global Humidity
 		global Temperature
 		LT = RCtime(RCpin)
-		
-		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 		if (LT == 1) :
 			print ('Alert! Light in the wine cellar')
 			#sent_SMS()
+		
+		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
+		
        
     # return dict
 	#}}}
