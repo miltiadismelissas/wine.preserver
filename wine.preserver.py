@@ -220,9 +220,9 @@ while True:
 		LT = RCtime(RCpin)
 		
 		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
-		if (LT = 0) :
+		if (LT ==1) :
 			print ('Alert! Light in the wine cellar')
-			sent_SMS()
+			#sent_SMS()
        
     # return dict
 	#}}}
