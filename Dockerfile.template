@@ -8,7 +8,7 @@ ENV INITSYSTEM on
 RUN apt-get update && apt-get install -yq --no-install-recommends wget build-essential && apt-get clean && rm -rf /var/lib/apt/lists*
 
 RUN pip3 install RPi.GPIO
-RUN pip3 install twilio
+#RUN pip3 install twilio
 
 COPY . /usr/src/app
 
