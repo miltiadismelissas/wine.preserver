@@ -48,6 +48,8 @@ while True:
 	
 	
 	def RCtime(RCpin):
+	    global LT
+		
 		LT = 0
     
 		if (GPIO.input(RCpin) == True):
@@ -217,6 +219,8 @@ while True:
 	def checkandprintData():
 		global Humidity
 		global Temperature
+		global LT
+		
 		LT = RCtime(RCpin)
 		if (LT == 1) :
 			print ('Alert! Light in the wine cellar')
