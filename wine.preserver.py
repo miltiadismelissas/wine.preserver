@@ -236,7 +236,7 @@ while True:
 		if (int(LT) == 1):
 			print ('Alert! Light in the wine cellar')
 			#sent_SMS()
-		@print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
+		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 		
        
     # return dict
