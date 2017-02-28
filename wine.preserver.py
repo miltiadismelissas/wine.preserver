@@ -68,7 +68,7 @@ while True:
     
 		if (GPIO.input(RCpin) == True):
 			LT += 1
-			if (LT == 1) :
+			if (LT == 1):
 				print ('Alert! Light in the wine cellar')
 				#sent_SMS()
 		return (str(LT))
@@ -229,10 +229,14 @@ while True:
 		
 		if (int(Temperature) < 10) or (int(Temperature) > 14):
 			print ("Alert! Temperature out of range")
+			print ("T: "+Temperature)			
 		if (int(Humidity) < 50):
 			print ("Alert! Humidity less than 50%")
-		
-		print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
+			print ("H: "+Humidity)
+		if (int(LT) == 1):
+			print ('Alert! Light in the wine cellar')
+			#sent_SMS()
+		@print ("H: "+Humidity, "T: "+Temperature, "L: "+LT)
 		
        
     # return dict
